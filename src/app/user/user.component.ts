@@ -9,6 +9,11 @@ import { GamesComponent } from "../games/games.component";
   styleUrl: './user.component.css'
 })
 export class UserComponent {
+  favGame =  '';
+
+  getFavoriteGame(game: string) {
+    this.favGame = game;
+  }
 greet() {
   alert("Hola1!!")
 }

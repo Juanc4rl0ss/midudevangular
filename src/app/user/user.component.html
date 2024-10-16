@@ -1,14 +1,14 @@
 <section>
-@if (isLoggedIn){
-<img
- alt="photo" 
- src="https://github.com/midudev.png"
- (click)="greet()"
- />
-} @else{
-<p>¡Inicia sesión!</p>
-<button (click)="isLoggedIn = true">Logueate</button>
-}
+    @if (isLoggedIn){
+    <img alt="photo" src="https://github.com/midudev.png" (click)="greet()" />
+    } @else{
+    <p>¡Inicia sesión!</p>
+    <button (click)="isLoggedIn = true">Logueate</button>
+    }
 
-<app-games user=" {{user}}"></app-games>
+    <app-games (addFavoriteEvent)="getFavoriteGame($event)" user=" {{user}}"></app-games>
+
+    @if (favGame != ''){
+    <p>El juego favorito de {{user}} es {{favGame}}</p>
+    }
 </section>
